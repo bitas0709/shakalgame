@@ -61,40 +61,28 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 	}
 	else if (prs == 97) { //нажатие на кнопку a
 		if (x > 0) {
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << world[y][x];
 			x -= 1;
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << "%";
 		}
 	}
 	else if (prs == 115) { //гажатие на кнопку s
 		if (y < 25) {
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << world[y][x];
 			y += 1;
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << "%";
 		}
 	}
 	else if (prs == 100) { //нажатие на кнопку d
 		if (x < 79) {
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << world[y][x];
 			x += 1;
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << "%";
 		}
 	}
