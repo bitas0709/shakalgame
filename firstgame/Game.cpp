@@ -52,14 +52,10 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 	COORD CursorPos;
 	if (prs == 119) { //нажатие на кнопку w
 		if (y > 0) {
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << world[y][x];
 			y -= 1;
-			CursorPos.X = x;
-			CursorPos.Y = y;
-			SetConsoleCursorPosition(hStdOut, CursorPos);
+			MCursor(x, y);
 			cout << "%";
 		}
 	}
@@ -226,6 +222,16 @@ void Game::Menu() {
 
 void Game::Mov() {
 
+}
+
+void Game::MCursor(int &x, int &y) {
+	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO structCursorInfo;
+	GetConsoleCursorInfo(hStdOut, &structCursorInfo);
+	COORD CursorPos;
+	CursorPos.X = x;
+	CursorPos.Y = y;
+	SetConsoleCursorPosition(hStdOut, CursorPos);
 }
 
 Game::~Game()
