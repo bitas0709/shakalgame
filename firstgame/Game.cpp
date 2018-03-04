@@ -7,12 +7,6 @@
 #include <windows.h>
 using namespace std;
 
-void Game::MoveCursor(int x,int y) { //перемещение курсора
-	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD CursorPos = { x, y };
-	SetConsoleCursorPosition(hStdOut, CursorPos);
-}
-
 Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 {
 	//Game::Menu();
@@ -91,15 +85,6 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 			cout << "%";
 		}
 	}
-}
-
-void Game::Generator() {
-	ifstream wrld("world.txt");
-	for (int i = 0; i < 25; i++) {
-		wrld.getline(world[i], 81); //костыль, так как чтение последнего символа из файла не происходило
-		cout << world[i];
-	}
-	wrld.close();
 }
 
 //void Game::Menu() {
