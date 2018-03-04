@@ -40,10 +40,6 @@ void Menu::wind()
 	cout << "+";
 }
 
-void Menu::key() {
-
-}
-
 void Menu::about() {
 
 }

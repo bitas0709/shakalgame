@@ -2,10 +2,8 @@
 class Global
 {
 public:
-	int x = 0, y = 0; //начальные координаты курсора
-	int mwx = 80, mwy = 25; //размеры окна по умолчанию (main window x, main window y)
-	void MoveCursor(int x, int y); //функци€ дл€ перемещени€ курсора
-	void setwinprop(); //функци€ дл€ установки параметров консоли (размера и прочего)
+	int x = 0, y = 0; //координаты курсора изначально
+
 	Global();
 	~Global();
 };
