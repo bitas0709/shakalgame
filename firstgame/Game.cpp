@@ -6,6 +6,11 @@
 #include <windows.h>
 using namespace std;
 
+void Game::MoveCursor(int x,int y) { //перемещение курсора
+	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD CursorPos = { x, y };
+	SetConsoleCursorPosition(hStdOut, CursorPos);
+}
 
 Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 {
@@ -21,16 +26,10 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 		SetConsoleWindowInfo(hStdOut, true, &src);
 		SetConsoleScreenBufferSize(hStdOut, crd);
 		COORD CursorPos;
-		CursorPos.X = 0;
-		CursorPos.Y = 0;
-		SetConsoleCursorPosition(hStdOut, CursorPos);
+		MoveCursor(0, 0);
 		Game::Generator();
-		CursorPos.X = 0;
-		CursorPos.Y = 0;
-		SetConsoleCursorPosition(hStdOut, CursorPos);
-		CursorPos.X = x;
-		CursorPos.Y = y;
-		SetConsoleCursorPosition(hStdOut, CursorPos);
+		MoveCursor(0, 0);
+		MoveCursor(x, y);
 		cout << "%";
 		int wh = 0; //переменная, отвечающая за выход из цикла. 1 закрывает цикл while
 		while (wh == 0) {
@@ -56,37 +55,37 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 	COORD CursorPos;
 	if (prs == 119) { //нажатие на кнопку w
 		if (y > 0) {
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << world[y][x];
 			y -= 1;
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << "%";
 		}
 	}
 	else if (prs == 97) { //нажатие на кнопку a
 		if (x > 0) {
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << world[y][x];
 			x -= 1;
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << "%";
 		}
 	}
 	else if (prs == 115) { //гажатие на кнопку s
 		if (y < 25) {
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << world[y][x];
 			y += 1;
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << "%";
 		}
 	}
 	else if (prs == 100) { //нажатие на кнопку d
 		if (x < 79) {
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << world[y][x];
 			x += 1;
-			MCursor(x, y);
+			MoveCursor(x, y);
 			cout << "%";
 		}
 	}
@@ -110,44 +109,54 @@ void Game::Menu() {
 	structCursorInfo.bVisible = false;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	COORD CursorPos;
-	CursorPos.X = 34;
-	CursorPos.Y = 8;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 8);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 8;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "+----------+" << endl;
-	CursorPos.X = 34;
-	CursorPos.Y = 9;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 9);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 9;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "|          |" << endl;
-	CursorPos.X = 34;
-	CursorPos.Y = 10;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 10);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 10;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "| New Game |" << endl;
-	CursorPos.X = 34;
-	CursorPos.Y = 11;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 11);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 11;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "| Options  |" << endl;
-	CursorPos.X = 34;
-	CursorPos.Y = 12;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 12);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 12;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "| About    |" << endl;
-	CursorPos.X = 34;
-	CursorPos.Y = 13;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 13);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 13;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "| Exit     |" << endl;
-	CursorPos.X = 34;
-	CursorPos.Y = 14;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 14);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 14;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "|          |" << endl;
-	CursorPos.X = 34;
-	CursorPos.Y = 15;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(34, 15);
+	//CursorPos.X = 34;
+	//CursorPos.Y = 15;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "+----------+" << endl;
-	CursorPos.X = mx;
-	CursorPos.Y = my;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(mx, my);
+	//CursorPos.X = mx;
+	//CursorPos.Y = my;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "*";
-	CursorPos.X = mx + 9;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
+	MoveCursor(mx + 9, my); // Под вопросом
+	//CursorPos.X = mx + 9;
+	//SetConsoleCursorPosition(hStdOut, CursorPos);
 	cout << "*";
 	while (mn == 0) {
 		if (_kbhit() == 0) {
@@ -157,39 +166,47 @@ void Game::Menu() {
 			prs = _getch();
 			if (prs == 119) {
 				if (my > 10) {
-					CursorPos.X = mx;
-					CursorPos.Y = my;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx, my);
+					//CursorPos.X = mx;
+					//CursorPos.Y = my;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << " ";
-					CursorPos.X = mx + 9;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx + 9, my); // под вопросом
+					//CursorPos.X = mx + 9;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << " ";
 					my -= 1;
-					CursorPos.X = mx;
-					CursorPos.Y = my;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx, my);
+					//CursorPos.X = mx;
+					//CursorPos.Y = my;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << "*";
-					CursorPos.X = mx + 9;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx + 9, my); // под вопросом
+					//CursorPos.X = mx + 9;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << "*";
 				}
 			}
 			else if (prs == 115) {
 				if (my < 13) {
-					CursorPos.X = mx;
-					CursorPos.Y = my;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx, my);
+					//CursorPos.X = mx;
+					//CursorPos.Y = my;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << " ";
-					CursorPos.X = mx + 9;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx + 9, my); // под вопросом
+					//CursorPos.X = mx + 9;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << " ";
 					my += 1;
-					CursorPos.X = mx;
-					CursorPos.Y = my;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx, my);
+					//CursorPos.X = mx;
+					//CursorPos.Y = my;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << "*";
-					CursorPos.X = mx + 9;
-					SetConsoleCursorPosition(hStdOut, CursorPos);
+					MoveCursor(mx + 9, my); // под вопросом
+					//CursorPos.X = mx + 9;
+					//SetConsoleCursorPosition(hStdOut, CursorPos);
 					cout << "*";
 				}
 			}
@@ -216,15 +233,6 @@ void Game::Mov() {
 
 }
 
-void Game::MCursor(int x, int y) {
-	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	CONSOLE_CURSOR_INFO structCursorInfo;
-	GetConsoleCursorInfo(hStdOut, &structCursorInfo);
-	COORD CursorPos;
-	CursorPos.X = x;
-	CursorPos.Y = y;
-	SetConsoleCursorPosition(hStdOut, CursorPos);
-}
 
 Game::~Game()
 {
