@@ -72,7 +72,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 		}
 	}
 	else if (prs == 115) { //гажатие на кнопку s
-		if (y < 25) {
+		if (y < 24) {
 			MoveCursor(x, y);
 			cout << world[y][x];
 			y += 1;
