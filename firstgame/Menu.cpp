@@ -50,6 +50,10 @@ void Menu::key() {
 	cout << "*";
 	MoveCursor(mx + 9, my);
 	cout << "*";
+	for (int i = 0; i < str; i++) {
+		MoveCursor(mx + 1, my + i);
+		cout << butt[i];
+	}
 	while (mn == 0) {
 		if (_kbhit() == 0) {
 			Sleep(100);
