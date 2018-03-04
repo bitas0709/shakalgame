@@ -1,6 +1,9 @@
 #pragma once
 #include "Menu.h"
-class Game : public Menu
+#include "Global.h"
+#include "WorldGen.h"
+
+class Game : public Menu, public WorldGen
 {
 public:
 	short step = 100; //время, через которое будет выполнен следуюший такт программы
@@ -8,10 +11,7 @@ public:
 	int mx = 35, my = 10; //координаты курсора в меню по умолчанию
 	bool mtrue = false; //переменная, отвечающая за запуск игры из меню
 	int prs = 0; //код нажатой клавиши
-	char world[25][80]; //размеры мира - X=80, Y=25
-	void MoveCursor(int x, int y); //функция для перемещения курсора
 	void Mov(); //функция для перемещения объекта
-	void Generator(); //функция для считывания мира из файла. В будущем нужно будет организовать более безопасный и эффективный способ генерации мира
 	//void Menu();
 	void Control(int &x, int &y, int prs);
 	Game();
