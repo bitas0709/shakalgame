@@ -16,6 +16,10 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 		GetConsoleCursorInfo(hStdOut, &structCursorInfo);
 		structCursorInfo.bVisible = false;
 		SetConsoleCursorInfo(hStdOut, &structCursorInfo);
+		COORD crd = { 80, 25 };
+		SMALL_RECT src = { 0, 0, crd.X - 1, crd.Y - 1 };
+		SetConsoleWindowInfo(hStdOut, true, &src);
+		SetConsoleScreenBufferSize(hStdOut, crd);
 		COORD CursorPos;
 		CursorPos.X = 0;
 		CursorPos.Y = 0;
