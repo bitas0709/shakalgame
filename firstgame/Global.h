@@ -6,10 +6,11 @@ class Global
 public:
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD CursorPos;
+	bool mtrue = false; //переменна€, отвечающа€ за переход в игру
 	int x = 0, y = 0; //начальные координаты курсора
-	int mwx = 80, mwy = 25; //размеры окна по умолчанию (main window x, main window y)
+	short mwx = 80, mwy = 25; //размеры окна по умолчанию (main window x, main window y)
 	void MoveCursor(short x, short y); //функци€ дл€ перемещени€ курсора
-	void SetWinProp(); //функци€ дл€ установки параметров консоли (размера и прочего)
+	void SetWinProp(short mwx, short mwy); //функци€ дл€ установки параметров консоли (размера и прочего)
 	Global();
 	~Global();
 };
