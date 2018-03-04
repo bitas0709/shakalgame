@@ -1,5 +1,6 @@
 #pragma once
-class Game
+#include "Menu.h"
+class Game : public Menu
 {
 public:
 	short step = 100; //время, через которое будет выполнен следуюший такт программы
@@ -11,7 +12,7 @@ public:
 	void MoveCursor(int x, int y); //функция для перемещения курсора
 	void Mov(); //функция для перемещения объекта
 	void Generator(); //функция для считывания мира из файла. В будущем нужно будет организовать более безопасный и эффективный способ генерации мира
-	void Menu();
+	//void Menu();
 	void Control(int &x, int &y, int prs);
 	Game();
 	~Game();
