@@ -212,7 +212,7 @@ void Game::Mov() {
 
 }
 
-void Game::MCursor(int &x, int &y) {
+void Game::MCursor(int x, int y) {
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	GetConsoleCursorInfo(hStdOut, &structCursorInfo);
