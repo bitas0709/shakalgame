@@ -12,7 +12,7 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 	//Game::Menu();
 	Game::wind();
 	if (mtrue == true) {
-		HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+//		HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		CONSOLE_CURSOR_INFO structCursorInfo;
 		GetConsoleCursorInfo(hStdOut, &structCursorInfo);
 		structCursorInfo.bVisible = false;
@@ -41,7 +41,7 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 }
 
 void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих координат
-	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+//	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	//COORD CursorPos;

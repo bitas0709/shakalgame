@@ -6,17 +6,15 @@ using namespace std;
 
 Global::Global()
 {
-	Global::setwinprop();
+	Global::SetWinProp();
 }
 
-void Global::MoveCursor(int x, int y) { //перемещение курсора
-	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD CursorPos = { x, y };
+void Global::MoveCursor(short x, short y) { //перемещение курсора
+	CursorPos = { x, y };
 	SetConsoleCursorPosition(hStdOut, CursorPos);
 }
 
-void Global::setwinprop() {
-	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+void Global::SetWinProp() {
 	static const TCHAR* title = TEXT("shakalgame.v0.00001");
 	SetConsoleTitle(title);
 	COORD crd = { 80, 25 };
