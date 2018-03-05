@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Menu.h"
+#include "Unit.h"
 #include <iostream>
 #include <fstream>
 #include <conio.h>
@@ -21,7 +22,7 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 		Game::Generator();
 		MoveCursor(0, 0);
 		MoveCursor(x, y);
-		cout << "%";
+		cout << model[0];
 		int wh = 0; //переменная, отвечающая за выход из цикла. 1 закрывает цикл while
 		while (wh == 0) {
 			if (_kbhit() == 0) {
@@ -50,7 +51,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 			cout << world[y][x];
 			y -= 1;
 			MoveCursor(x, y);
-			cout << "%";
+			cout << model[0];
 		}
 	}
 	else if (prs == 97) { //нажатие на кнопку a
@@ -59,7 +60,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 			cout << world[y][x];
 			x -= 1;
 			MoveCursor(x, y);
-			cout << "%";
+			cout << model[0];
 		}
 	}
 	else if (prs == 115) { //гажатие на кнопку s
@@ -68,7 +69,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 			cout << world[y][x];
 			y += 1;
 			MoveCursor(x, y);
-			cout << "%";
+			cout << model[0];
 		}
 	}
 	else if (prs == 100) { //нажатие на кнопку d
@@ -77,7 +78,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 			cout << world[y][x];
 			x += 1;
 			MoveCursor(x, y);
-			cout << "%";
+			cout << model[0];
 		}
 	}
 }

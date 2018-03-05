@@ -2,12 +2,13 @@
 #include "Menu.h"
 #include "Global.h"
 #include "WorldGen.h"
+#include "Unit.h"
 
-class Game : public Menu, public WorldGen
+class Game : public Menu, public WorldGen, public Unit
 {
 public:
 	short step = 100; //время, через которое будет выполнен следуюший такт программы
-	int x=10, y=10; //информация о герое, положение героя в осях X и Y
+	int x=4, y=3; //информация о герое, положение героя в осях X и Y
 	int mx = 35, my = 10; //координаты курсора в меню по умолчанию
 	void Mov(); //функция для перемещения объекта
 	void Control(int &x, int &y, int prs);

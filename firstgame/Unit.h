@@ -7,7 +7,7 @@ public:
 	int hp, corx, cory; //количество жизней юнита, координаты юнита
 	int spd, dmg; //скорость юнита, урон, наносимый юнитом
 	int blk; //класс брони юнита
-	char model; //модель юнита
+	char model[2] = { '^', '*' }; //модель юнита
 	~Unit();
 	void Mov(int NewX, int NewY);
 };
