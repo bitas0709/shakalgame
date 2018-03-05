@@ -10,7 +10,9 @@ using namespace std;
 
 Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 {
-	Game::wind();
+	Global::Window(10, 10, 6, 6, 1);
+	system("pause");
+	//Game::wind();
 	if (mtrue == true) {
 //		HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		CONSOLE_CURSOR_INFO structCursorInfo;
