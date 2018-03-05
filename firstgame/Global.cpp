@@ -24,9 +24,9 @@ void Global::SetWinProp(short mwx, short mwy) {
 	SetConsoleScreenBufferSize(hStdOut, crd);
 }
 
-void Global::Window(int startx, int starty, int length, int height, int background) {
+void Global::Window(int mstr, int mchr, char mass[20][30], int background) {
 	int done = 0; //переменная, которая позволяет отрисовать стенки окна один раз
-	MoveCursor(startx, starty);
+	/*MoveCursor(startx, starty);
 	for (int i = 0; i < 2; i++) {
 		cout << "+";
 		for (int j = 0; j < length - 2; j++) {
@@ -41,7 +41,7 @@ void Global::Window(int startx, int starty, int length, int height, int backgrou
 				cout << "|";
 			}
 		}
-	}
+	}*/
 
 }
 

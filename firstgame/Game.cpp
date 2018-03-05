@@ -10,7 +10,7 @@ using namespace std;
 
 Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 {
-	Global::Window(10, 10, 6, 6, 1);
+	//Global::Window(10, 10, butt[4][10], 1);
 	system("pause");
 	//Game::wind();
 	if (mtrue == true) {
