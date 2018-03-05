@@ -14,7 +14,7 @@ void Menu::wind()
     SetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	//Конец шайтан коробки
 
-	MoveCursor((80 - chr - 4) / 2, (25 - str - 2) / 2);
+	MoveCursor(wx, wy);
 	cout << "+";
 	for (int i = 0; i < chr+2; i++) {
 		cout << "-";
