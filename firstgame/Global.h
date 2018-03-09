@@ -13,7 +13,7 @@ public:
 	short mwx = 80, mwy = 25; //размеры окна по умолчанию (main window x, main window y)
 	void MoveCursor(short x, short y); //функция для перемещения курсора
 	void SetWinProp(short mwx, short mwy); //функция для установки параметров консоли (размера и прочего)
-	void Window(int mstr, int mchr, char mass[20][15] , int background);
+	void Window(int mstr, int mchr, char mass[20][14] , int background);
 	Global();
 	~Global();
 };
