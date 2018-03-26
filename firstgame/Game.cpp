@@ -47,8 +47,8 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	//COORD CursorPos;
-	if (prs == 119) { //нажатие на кнопку w
-		if (y > 0) {
+	if ((prs == 119)&&(world[y-1,x] != "1")) { //нажатие на кнопку w
+		if (y > 1) {
 			MoveCursor(x, y);
 			cout << world[y][x];
 			y -= 1;
@@ -57,7 +57,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 		}
 	}
 	else if (prs == 97) { //нажатие на кнопку a
-		if (x > 0) {
+		if (x > 1) {
 			MoveCursor(x, y);
 			cout << world[y][x];
 			x -= 1;
@@ -65,7 +65,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 			cout << model[0];
 		}
 	}
-	else if (prs == 115) { //гажатие на кнопку s
+	else if (prs == 115) { //нажатие на кнопку s
 		if (y < 24) {
 			MoveCursor(x, y);
 			cout << world[y][x];
