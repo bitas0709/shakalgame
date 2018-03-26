@@ -24,6 +24,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>firstgame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>shakalgame</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -159,7 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="firstgame.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Hero.cpp" />

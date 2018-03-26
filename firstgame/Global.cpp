@@ -28,7 +28,7 @@ void Global::SetWinProp(short mwx, short mwy) {
 void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	GetConsoleCursorInfo(hStdOut, &structCursorInfo);
-	structCursorInfo.bVisible = true;
+	structCursorInfo.bVisible = false;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	int done = 0; //переменная, которая позволяет отрисовать стенки окна один раз
 	short mwxn = (mwx - mchr) / 2; //координата x, с которой начнётся отрисовка окна (MoveWindowXNew)
@@ -57,6 +57,7 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 	cout << "+";*/
 	for (int m = 0; m < mstr / 2 + 1; m++) {
 		for (int i = 0; i < mchr / 2 - 1; i++) {
+			SetConsoleTextAttribute(hStdOut, (WORD)(background << 5));
 			MoveCursor(mwx / 2 - 2 - i, mwy / 2 - m);
 			cout << "+";
 			for (int j = 0; j < i; j++) {
@@ -78,14 +79,18 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 			}
 			cout << "+";
 			for (int u = 0; u < m; u++) {
-				MoveCursor(mwx / 2 - 1 - i, mwy / 2 - m + 1);
-				for (int j = 0; j < i*2+4; j++) {
-					cout << " ";
-				}
-				MoveCursor(mwx / 2 - 1 - i, mwy / 2 + m);
+				MoveCursor(mwx / 2 - 2 - i, mwy / 2 - m + 1);
+				cout << "|";
 				for (int j = 0; j < i * 2 + 4; j++) {
 					cout << " ";
 				}
+				cout << "|";
+				MoveCursor(mwx / 2 - 2 - i, mwy / 2 + m);
+				cout << "|";
+				for (int j = 0; j < i * 2 + 4; j++) {
+					cout << " ";
+				}
+				cout << "|";
 			}
 			if (m == 0) {
 				Sleep(100);
@@ -172,7 +177,6 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 			}
 		}
 	}*/
-
 }
 
 Global::~Global()

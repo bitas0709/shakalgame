@@ -21,6 +21,7 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 		//COORD CursorPos;
 		MoveCursor(0, 0);
 		Game::Generator();
+		system("color 07");
 		MoveCursor(0, 0);
 		MoveCursor(x, y);
 		cout << model[0];
