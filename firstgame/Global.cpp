@@ -77,6 +77,16 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 				cout << "-";
 			}
 			cout << "+";
+			for (int u = 0; u < m; u++) {
+				MoveCursor(mwx / 2 - 1 - i, mwy / 2 - m + 1);
+				for (int j = 0; j < i*2+4; j++) {
+					cout << " ";
+				}
+				MoveCursor(mwx / 2 - 1 - i, mwy / 2 + m);
+				for (int j = 0; j < i * 2 + 4; j++) {
+					cout << " ";
+				}
+			}
 			if (m == 0) {
 				Sleep(100);
 			}
