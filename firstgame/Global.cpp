@@ -17,7 +17,7 @@ void Global::MoveCursor(short x, short y) { //перемещение курсора
 }
 
 void Global::SetWinProp(short mwx, short mwy) {
-	static const TCHAR* title = TEXT("shakalgame.v0.00001");
+	static const TCHAR* title = TEXT("shakalgame.v0.00002");
 	SetConsoleTitle(title);
 	COORD crd = { mwx, mwy };
 	SMALL_RECT src = { 0, 0, crd.X - 1, crd.Y - 1 };
