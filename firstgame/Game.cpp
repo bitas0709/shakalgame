@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "Menu.h"
 #include "Unit.h"
 #include <iostream>
 #include <fstream>
@@ -47,7 +46,8 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	//COORD CursorPos;
-	if ((prs == 119)&&(world[y-1][x] == ' ')) { //нажатие на кнопку w
+	//cout << prs;
+	if (((prs == 119)||(prs == 230)||(prs == 72))&&(world[y-1][x] == ' ')) { //нажатие на кнопку w или ц
 		if (y > 1) {
 			MoveCursor(x, y);
 			cout << world[y][x];
@@ -56,31 +56,34 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 			cout << model[0];
 		}
 	}
-	else if ((prs == 97)&&(world[y][x-1] == ' ')) { //нажатие на кнопку a
+	else if (((prs == 97)||(prs == 228)||(prs == 75))&&(world[y][x-1] == ' ')) { //нажатие на кнопку a или ф
 		if (x > 1) {
 			MoveCursor(x, y);
 			cout << world[y][x];
 			x -= 1;
 			MoveCursor(x, y);
-			cout << model[0];
+			//cout << model[1];
+			cout << "<";
 		}
 	}
-	else if ((prs == 115)&&(world[y+1][x] == ' ')) { //нажатие на кнопку s
+	else if (((prs == 115)||(prs == 235)||(prs == 80))&&(world[y+1][x] == ' ')) { //нажатие на кнопку s или ы
 		if (y < 24) {
 			MoveCursor(x, y);
 			cout << world[y][x];
 			y += 1;
 			MoveCursor(x, y);
-			cout << model[0];
+			//cout << model[2];
+			cout << "V";
 		}
 	}
-	else if ((prs == 100)&&(world[y][x+1] == ' ')) { //нажатие на кнопку d
+	else if (((prs == 100)||(prs == 162)||(prs == 77))&&(world[y][x+1] == ' ')) { //нажатие на кнопку d или в
 		if (x < 79) {
 			MoveCursor(x, y);
 			cout << world[y][x];
 			x += 1;
 			MoveCursor(x, y);
-			cout << model[0];
+			//cout << model[3];
+			cout << ">";
 		}
 	}
 }

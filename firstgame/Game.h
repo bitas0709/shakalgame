@@ -1,10 +1,9 @@
 #pragma once
-#include "Menu.h"
 #include "Global.h"
 #include "WorldGen.h"
 #include "Unit.h"
 
-class Game : public Menu, public WorldGen, public Unit
+class Game : public Global, public WorldGen, public Unit
 {
 public:
 	short step = 100; //время, через которое будет выполнен следуюший такт программы
