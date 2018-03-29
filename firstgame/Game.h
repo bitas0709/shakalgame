@@ -1,7 +1,6 @@
 #pragma once
 #include "Global.h"
 #include "WorldGen.h"
-#include "Unit.h"
 
 class Game : public Global, public WorldGen, public Unit
 {
