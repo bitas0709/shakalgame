@@ -7,21 +7,17 @@ using namespace std;
 
 Global::Global()
 {
-	Global::SetWinProp();
-}
-
-void Global::MoveCursor(short x, short y) { //перемещение курсора
-	CursorPos = { x, y };
-	SetConsoleCursorPosition(hStdOut, CursorPos);
-}
-
-void Global::SetWinProp() {
 	static const TCHAR* title = TEXT("shakalgame.v0.00002");
 	SetConsoleTitle(title);
 	COORD crd = { 80, 26 };
 	SMALL_RECT src = { 0, 0, crd.X - 1, crd.Y - 1 };
 	SetConsoleWindowInfo(hStdOut, true, &src);
 	SetConsoleScreenBufferSize(hStdOut, crd);
+}
+
+void Global::MoveCursor(short x, short y) { //перемещение курсора
+	CursorPos = { x, y };
+	SetConsoleCursorPosition(hStdOut, CursorPos);
 }
 
 void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
