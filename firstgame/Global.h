@@ -17,6 +17,7 @@ public:
 
 
 	void MoveCursor(short x, short y); //функция для перемещения курсора
+	void SetWinProp(); //функция для установки параметров консоли (размера и прочего). При изменении mwx и mwy, их стоит поменять и здесь
 	void Window(int mstr, int mchr, char mass[20][14] , int background);
 	Global();
 	~Global();
