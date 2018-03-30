@@ -1,6 +1,7 @@
 #pragma once
 #include "Unit.h"
-#include "Atlass.h"
+#include "Atlas.h"
+
 #define std_start_hp 100
 #define std_start_dmg 1
 class Hero :

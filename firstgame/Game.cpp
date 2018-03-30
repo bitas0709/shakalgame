@@ -4,11 +4,12 @@
 #include <fstream>
 #include <conio.h>
 #include <windows.h>
+#include "Hero.h"
 using namespace std;
 
 Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 {
-	Unit Hero = new Unit();
+	Hero Player(15,15);
 	Global::Window(str, chr, butt, 1);
 	//Game::wind();
 	if (Global::mtrue == true) {

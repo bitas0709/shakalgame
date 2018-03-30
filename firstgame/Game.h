@@ -2,7 +2,7 @@
 #include "Global.h"
 #include "WorldGen.h"
 
-class Game : public Global, public WorldGen, public Unit
+class Game : public Global, public WorldGen
 {
 public:
 	short step = 100; //время, через которое будет выполнен следуюший такт программы

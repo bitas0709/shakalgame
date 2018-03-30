@@ -142,17 +142,17 @@ Global::~Global()
 {
 }
 
-Unit::Unit()
-{
-
-}
-
-
-Unit::~Unit()
-{
-}
-
-void Unit::Mov(int NewX, int NewY)
-{
-
-}
+//Unit::Unit()
+//{
+//
+//}
+//
+//
+//Unit::~Unit()
+//{
+//}
+//
+//void Unit::Mov(int NewX, int NewY)
+//{
+//
+//}

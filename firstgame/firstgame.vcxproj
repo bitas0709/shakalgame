@@ -148,7 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Atlass.h" />
+    <ClInclude Include="Atlas.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Global.h" />
@@ -159,7 +159,6 @@
     <ClInclude Include="WorldGen.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Atlass.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Game.cpp" />
