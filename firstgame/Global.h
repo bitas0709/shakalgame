@@ -17,9 +17,20 @@ public:
 
 
 	void MoveCursor(short x, short y); //функция для перемещения курсора
-	void SetWinProp(); //функция для установки параметров консоли (размера и прочего). При изменении mwx и mwy, их стоит поменять и здесь
 	void Window(int mstr, int mchr, char mass[20][14] , int background);
 	Global();
 	~Global();
+};
+
+class Unit
+{
+public:
+	Unit();
+	int hp, corx, cory; //количество жизней юнита, координаты юнита
+	int spd, dmg; //скорость юнита, урон, наносимый юнитом
+	int blk; //класс брони юнита
+	char model[5] = { '^', '<', '>', 'V', '*' }; //модель юнита
+	~Unit();
+	void Mov(int NewX, int NewY);
 };
 

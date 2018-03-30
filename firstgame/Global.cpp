@@ -5,24 +5,19 @@
 #include <iostream>
 using namespace std;
 
-
 Global::Global()
 {
-	Global::SetWinProp();
-}
-
-void Global::MoveCursor(short x, short y) { //перемещение курсора
-	CursorPos = { x, y };
-	SetConsoleCursorPosition(hStdOut, CursorPos);
-}
-
-void Global::SetWinProp() {
 	static const TCHAR* title = TEXT("shakalgame.v0.00002");
 	SetConsoleTitle(title);
 	COORD crd = { 80, 26 };
 	SMALL_RECT src = { 0, 0, crd.X - 1, crd.Y - 1 };
 	SetConsoleWindowInfo(hStdOut, true, &src);
 	SetConsoleScreenBufferSize(hStdOut, crd);
+}
+
+void Global::MoveCursor(short x, short y) { //перемещение курсора
+	CursorPos = { x, y };
+	SetConsoleCursorPosition(hStdOut, CursorPos);
 }
 
 void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
@@ -35,26 +30,6 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 	short mwyn = (mwy - mstr) / 2; //координата y, с которой начнётся отрисовка окна (MoveWindowYNew)
 	short mwxc = mwxn + 1; //координата x, с которой начнётся отрисока кнопок (MoveWindowXCurrent)
 	short mwyc = mwyn + 1; //координата y, с которой начнётся отрисовка кнопок (MoveWindowYCurrent) 
-	/*MoveCursor(mwxn, mwyn);
-	cout << "+";
-	for (int j = 0; j < mchr; j++) {
-		cout << "-";
-	}
-	cout << "+";
-	if (done == 0) {
-		for (int j = 0; j < mstr; j++) {
-			MoveCursor(mwxn, mwyn + 1 + j);
-			cout << "|";
-			MoveCursor(mwxn + mchr + 1, mwyn + 1 + j);
-			cout << "|";
-		}
-	}
-	MoveCursor(mwxn, mwyn + mstr + 1);
-	cout << "+";
-	for (int j = 0; j < mchr; j++) {
-		cout << "-";
-	}
-	cout << "+";*/
 	for (int m = 0; m < mstr / 2 + 1; m++) {
 		for (int i = 0; i < mchr / 2 - 1; i++) {
 			SetConsoleTextAttribute(hStdOut, (WORD)(background << 5));
@@ -114,7 +89,7 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 		}
 		else {
 			prs = _getch();
-			if (prs == 119) {
+			if ((prs == 119)||(prs == 230)||(prs == 72)) {
 				if (mwyc > mwyn + 1) {
 					MoveCursor(mwxc, mwyc);
 					cout << " ";
@@ -128,7 +103,7 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 					cout << "*";
 				}
 			}
-			else if (prs == 115) {
+			else if ((prs == 115)||(prs == 235)||(prs == 80)) {
 				if (mwyc < mwyn + mstr) {
 					MoveCursor(mwxc, mwyc);
 					cout << " ";
@@ -161,24 +136,23 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 			}
 		}
 	}
-	/*MoveCursor(startx, starty);
-	for (int i = 0; i < 2; i++) {
-		cout << "+";
-		for (int j = 0; j < length - 2; j++) {
-			cout << "-";
-		}
-		cout << "+";
-		if (done == 0) {
-			for (int j = 0; j < height - 2; j++) {
-				MoveCursor(startx, starty + 1 + i);
-				cout << "|";
-				MoveCursor(startx + length - 1, starty + 1 + i);
-				cout << "|";
-			}
-		}
-	}*/
 }
 
 Global::~Global()
 {
+}
+
+Unit::Unit()
+{
+
+}
+
+
+Unit::~Unit()
+{
+}
+
+void Unit::Mov(int NewX, int NewY)
+{
+
 }
