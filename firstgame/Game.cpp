@@ -10,6 +10,7 @@ using namespace std;
 
 Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 {
+	Unit Hero = new Unit();
 	Global::Window(str, chr, butt, 1);
 	//Game::wind();
 	if (Global::mtrue == true) {
