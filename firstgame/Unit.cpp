@@ -6,7 +6,7 @@ Unit::Unit()
 {
 }
 
-Unit::Unit(int Cor_X, int Cor_Y, int HP, int DMG, char *model)
+Unit::Unit(int Cor_X, int Cor_Y, int HP, int DMG, char model)
 {
 	CorX = Cor_X;
 	CorY = Cor_Y;
@@ -19,6 +19,7 @@ void Unit::Move(int NewX, int NewY)
 {
 
 }
+
 void Unit::Attack()
 {
 

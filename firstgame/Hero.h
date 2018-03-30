@@ -1,5 +1,6 @@
 #pragma once
 #include "Unit.h"
+#include "Atlass.h"
 #define std_start_hp 100
 #define std_start_dmg 1
 class Hero :
@@ -7,7 +8,7 @@ class Hero :
 {
 public:
 	Hero();
-	Hero(int Cor_X, int Cor_Y) : Unit(Cor_X, Cor_Y, std_start_hp, std_start_dmg, );
+	Hero(int Cor_X, int Cor_Y);
 	~Hero();
 };
 
