@@ -1,14 +1,18 @@
 #pragma once
 #include <windows.h>
-class Unit
+	class Unit
 {
 public:
 	Unit();
-	int hp, corx, cory; //количество жизней юнита, координаты юнита
+	Unit(int Cor_X, int Cor_Y, int HP, int DMG, char *model);
+	void Attack();
+	void Get_Damage(int damage);
+	void Die();
+	int hp, CorX, CorY; //количество жизней юнита, координаты юнита
 	int spd, dmg; //скорость юнита, урон, наносимый юнитом
 	int blk; //класс брони юнита
-	char model[5] = { '^', '<', '>', 'V', '*' }; //модель юнита
+	char *Model; //модель юнита
 	~Unit();
-	void Mov(int NewX, int NewY);
+	void Move(int NewX, int NewY);
 };
 
