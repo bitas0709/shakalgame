@@ -5,6 +5,10 @@
 #include <iostream>
 using namespace std;
 
+extern HANDLE hStdOut;
+extern COORD CursorPos;
+extern void MoveCursor(short x, short y);
+
 Global::Global()
 {
 	static const TCHAR* title = TEXT("shakalgame.v0.00002");

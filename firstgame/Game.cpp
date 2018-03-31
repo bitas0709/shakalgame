@@ -6,6 +6,10 @@
 #include <windows.h>
 using namespace std;
 
+extern HANDLE hStdOut;
+extern COORD CursorPos;
+extern void MoveCursor(short x, short y);
+
 Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 {
 	Global::Window(str, chr, butt, 1);
@@ -48,7 +52,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 	//COORD CursorPos;
 	//cout << prs;
 	if ((prs == 119)||(prs == 230)||(prs == 72)) { //нажатие на кнопку w или ц
-		Player->Move(Player->CorX, Player->CorY + 1, Arena);
+		Player->Move(Player->CorX, Player->CorY - 1, Arena);
 												
 		 //if ((y > 1) && (Arena->world[y - 1][x] == ' ')) {
 		//	MoveCursor(x, y);
@@ -80,7 +84,7 @@ void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих коорди
 		//}
 	}
 	else if ((prs == 115)||(prs == 235)||(prs == 80)) { //нажатие на кнопку s или ы
-		Player->Move(Player->CorX, Player->CorY - 1, Arena);
+		Player->Move(Player->CorX, Player->CorY + 1, Arena);
 
 		//if ((y < 24) && (world[y + 1][x] == ' ')) {
 		//	MoveCursor(x, y);
