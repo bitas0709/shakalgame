@@ -1,8 +1,8 @@
 #pragma once
 #include "Global.h"
-#include "WorldGen.h"
+#include "World.h"
 
-class Game : public Global, public WorldGen
+class Game : public Global, public World
 {
 public:
 	short step = 100; //время, через которое будет выполнен следуюший такт программы
