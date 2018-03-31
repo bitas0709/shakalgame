@@ -1,7 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "Global.h"
-#include "WorldGen.h"
+#include "World.h"
 class Unit
 {
 public:
@@ -11,7 +11,7 @@ public:
 	void Attack(); //Нанесение урона
 	void Get_Damage(int damage); //Получение урона
 	void Die(); //Смерть
-	void Move(int NewX, int NewY); //Движение в новую точку с координатами
+	void Move(int NewX, int NewY, World *Location); //Движение в новую точку с координатами, в заданной локации
 
 	// Параметры
 	int hp;//количество жизней юнита,

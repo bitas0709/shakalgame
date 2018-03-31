@@ -15,10 +15,7 @@ Global::Global()
 	SetConsoleScreenBufferSize(hStdOut, crd);
 }
 
-void Global::MoveCursor(short x, short y) { //перемещение курсора
-	CursorPos = { x, y };
-	SetConsoleCursorPosition(hStdOut, CursorPos);
-}
+
 
 void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 	CONSOLE_CURSOR_INFO structCursorInfo;

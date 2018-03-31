@@ -10,14 +10,15 @@ using namespace std;
 World::World() 
 {
 	Length = TestWorldLength;
-	Wide = TestWorldWide;	
+	Wide = TestWorldWide;
+	GenerateFromFile();
 }
 World::World(int length, int wide) 
 {
 	Length = length;
 	Wide = wide;	
 }
-void World::Generator() 
+void World::GenerateFromFile() 
 {
 
 	world = new char*[Length];

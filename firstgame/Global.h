@@ -4,8 +4,7 @@
 class Global
 {
 public:
-	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD CursorPos;
+
 	int prs = 0; //код нажатой кнопки
 	short ret = 0; //переменная, содержащая в себе возвращённое значение функции
 	bool mtrue = false; //переменная, отвечающая за переход в игру
@@ -16,7 +15,7 @@ public:
 	char butt[str][chr] = { { 'N','e','w',' ','g','a','m','e' },{ 'O','p','t','i','o','n','s' },{ 'A','b','o','u','t' },{ 'E','x','i','t' } }; //массив, содержащий текст кнопок
 
 
-	void MoveCursor(short x, short y); //функция для перемещения курсора
+//	void MoveCursor(short x, short y); //функция для перемещения курсора
 	void Window(int mstr, int mchr, char mass[20][14] , int background);
 	Global();
 	~Global();
