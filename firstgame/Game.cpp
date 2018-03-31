@@ -16,12 +16,10 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 
 	//Game::wind();
 	if (Global::mtrue == true) {
-//		HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 		CONSOLE_CURSOR_INFO structCursorInfo;
 		GetConsoleCursorInfo(hStdOut, &structCursorInfo);
 		structCursorInfo.bVisible = false;
 		SetConsoleCursorInfo(hStdOut, &structCursorInfo);
-		//COORD CursorPos;
 		MoveCursor(0, 0);
 		Arena = new World;
 		Arena->GenerateFromFile(); //Создание мира на экране
@@ -46,80 +44,22 @@ Game::Game() //конструктор, в котором и проихсодит весь игровой процесс
 }
 
 void Game::Control(int &x, int &y, int prs) { //x и y - получение текущих координат
-//	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
-	//COORD CursorPos;
-	//cout << prs;
 	if ((prs == 119)||(prs == 230)||(prs == 72)) { //нажатие на кнопку w или ц
 		Player->Move(Player->CorX, Player->CorY - 1, Arena);
-												
-		 //if ((y > 1) && (Arena->world[y - 1][x] == ' ')) {
-		//	MoveCursor(x, y);
-		//	cout << Arena->world[y][x];
-		//	y -= 1;
-		//	MoveCursor(x, y);
-		//	cout << model[0];
-		//	//cout << "^";
-		//}
-		//else {
-		//	MoveCursor(x, y);
-		//	cout << model[0];
-		//}
 	}
 	else if ((prs == 97)||(prs == 228)||(prs == 75)) { //нажатие на кнопку a или ф
 		Player->Move(Player->CorX - 1, Player->CorY, Arena);
-
-		//if ((x > 1) && (world[y][x - 1] == ' ')) {
-		//	MoveCursor(x, y);
-		//	cout << world[y][x];
-		//	x -= 1;
-		//	MoveCursor(x, y);
-		//	cout << model[1];
-		//	//cout << "<";
-		//}
-		//else {
-		//	MoveCursor(x, y);
-		//	cout << model[1];
-		//}
 	}
 	else if ((prs == 115)||(prs == 235)||(prs == 80)) { //нажатие на кнопку s или ы
 		Player->Move(Player->CorX, Player->CorY + 1, Arena);
-
-		//if ((y < 24) && (world[y + 1][x] == ' ')) {
-		//	MoveCursor(x, y);
-		//	cout << world[y][x];
-		//	y += 1;
-		//	MoveCursor(x, y);
-		//	cout << model[3];
-		//	//cout << "V";
-		//}
-		//else {
-		//	MoveCursor(x, y);
-		//	cout << model[3];
-		//}
 	}
 	else if ((prs == 100)||(prs == 162)||(prs == 77)) { //нажатие на кнопку d или в
 		Player->Move(Player->CorX + 1, Player->CorY, Arena);
-
-		//if ((x < 79) && (world[y][x + 1] == ' ')) {
-		//	MoveCursor(x, y);
-		//	cout << world[y][x];
-		//	x += 1;
-		//	MoveCursor(x, y);
-		//	cout << model[2];
-		//	//cout << ">";
-		//}
-		//else {
-		//	MoveCursor(x, y);
-		//	cout << model[2];
-		//}
 	}
 }
 
-void Game::Mov() {
-
-}
 
 
 Game::~Game()

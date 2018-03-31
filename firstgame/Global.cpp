@@ -142,18 +142,3 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 Global::~Global()
 {
 }
-
-//Unit::Unit()
-//{
-//
-//}
-//
-//
-//Unit::~Unit()
-//{
-//}
-//
-//void Unit::Mov(int NewX, int NewY)
-//{
-//
-//}

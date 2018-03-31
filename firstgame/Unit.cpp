@@ -33,6 +33,8 @@ void Unit::Move(int NewX, int NewY, World *Location)
 		else if (NewX < CorX) cout << Model[1];
 		else if (NewX > CorX) cout << Model[2];
 		else cout << Model[0];
+		//
+		
 		CorX = NewX;
 		CorY = NewY;
 

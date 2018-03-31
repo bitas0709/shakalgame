@@ -9,7 +9,7 @@ class Hero :
 {
 public:
 	Hero();
-	Hero(int Cor_X, int Cor_Y);
+	Hero(int Cor_X, int Cor_Y); //Создание героя с заданными координатами
 	~Hero();
 };
 
