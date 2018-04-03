@@ -1,6 +1,6 @@
-#include "stdafx.h"
+п»ї#include "stdafx.h"
 #include "Hero.h"
-char *HeroModel = new char[4]{ '^', '<', '>', 'V' }; //Возможные модели героев
+char *HeroModel = new char[4]{ '^', '<', '>', 'V' }; //Р’РѕР·РјРѕР¶РЅС‹Рµ РјРѕРґРµР»Рё РіРµСЂРѕРµРІ
 
 Hero::Hero()
 {

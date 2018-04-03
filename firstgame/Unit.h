@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <windows.h>
 #include "Global.h"
 #include "World.h"
@@ -7,17 +7,17 @@ class Unit
 public:
 	Unit();
 	Unit(int Cor_X, int Cor_Y, int HP, int DMG, char *model);
-	// Поведение
-	void Attack(); //Нанесение урона
-	void Get_Damage(int damage); //Получение урона
-	void Die(); //Смерть
-	void Move(int NewX, int NewY, World *Location); //Движение в новую точку с координатами, в заданной локации
+	// РџРѕРІРµРґРµРЅРёРµ
+	void Attack(); //РќР°РЅРµСЃРµРЅРёРµ СѓСЂРѕРЅР°
+	void Get_Damage(int damage); //РџРѕР»СѓС‡РµРЅРёРµ СѓСЂРѕРЅР°
+	void Die(); //РЎРјРµСЂС‚СЊ
+	void Move(int NewX, int NewY, World *Location); //Р”РІРёР¶РµРЅРёРµ РІ РЅРѕРІСѓСЋ С‚РѕС‡РєСѓ СЃ РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё, РІ Р·Р°РґР°РЅРЅРѕР№ Р»РѕРєР°С†РёРё
 
-	// Параметры
-	int hp;//количество жизней юнита,
-	int CorX, CorY;// координаты юнита
-	int spd, dmg; //скорость юнита, урон, наносимый юнитом
-	int blk; //класс брони юнита
-	char *Model; //модель юнита
+	// РџР°СЂР°РјРµС‚СЂС‹
+	int hp;//РєРѕР»РёС‡РµСЃС‚РІРѕ Р¶РёР·РЅРµР№ СЋРЅРёС‚Р°,
+	int CorX, CorY;// РєРѕРѕСЂРґРёРЅР°С‚С‹ СЋРЅРёС‚Р°
+	int spd, dmg; //СЃРєРѕСЂРѕСЃС‚СЊ СЋРЅРёС‚Р°, СѓСЂРѕРЅ, РЅР°РЅРѕСЃРёРјС‹Р№ СЋРЅРёС‚РѕРј
+	int blk; //РєР»Р°СЃСЃ Р±СЂРѕРЅРё СЋРЅРёС‚Р°
+	char *Model; //РјРѕРґРµР»СЊ СЋРЅРёС‚Р°
 	~Unit();
 };

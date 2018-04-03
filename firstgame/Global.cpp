@@ -1,4 +1,4 @@
-#include "stdafx.h"
+п»ї#include "stdafx.h"
 #include "Global.h"
 #include <windows.h>
 #include <conio.h>
@@ -26,11 +26,11 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 	GetConsoleCursorInfo(hStdOut, &structCursorInfo);
 	structCursorInfo.bVisible = false;
 	SetConsoleCursorInfo(hStdOut, &structCursorInfo);
-	int done = 0; //переменная, которая позволяет отрисовать стенки окна один раз
-	short mwxn = (mwx - mchr) / 2; //координата x, с которой начнётся отрисовка окна (MoveWindowXNew)
-	short mwyn = (mwy - mstr) / 2; //координата y, с которой начнётся отрисовка окна (MoveWindowYNew)
-	short mwxc = mwxn + 1; //координата x, с которой начнётся отрисока кнопок (MoveWindowXCurrent)
-	short mwyc = mwyn + 1; //координата y, с которой начнётся отрисовка кнопок (MoveWindowYCurrent) 
+	int done = 0; //РїРµСЂРµРјРµРЅРЅР°СЏ, РєРѕС‚РѕСЂР°СЏ РїРѕР·РІРѕР»СЏРµС‚ РѕС‚СЂРёСЃРѕРІР°С‚СЊ СЃС‚РµРЅРєРё РѕРєРЅР° РѕРґРёРЅ СЂР°Р·
+	short mwxn = (mwx - mchr) / 2; //РєРѕРѕСЂРґРёРЅР°С‚Р° x, СЃ РєРѕС‚РѕСЂРѕР№ РЅР°С‡РЅС‘С‚СЃСЏ РѕС‚СЂРёСЃРѕРІРєР° РѕРєРЅР° (MoveWindowXNew)
+	short mwyn = (mwy - mstr) / 2; //РєРѕРѕСЂРґРёРЅР°С‚Р° y, СЃ РєРѕС‚РѕСЂРѕР№ РЅР°С‡РЅС‘С‚СЃСЏ РѕС‚СЂРёСЃРѕРІРєР° РѕРєРЅР° (MoveWindowYNew)
+	short mwxc = mwxn + 1; //РєРѕРѕСЂРґРёРЅР°С‚Р° x, СЃ РєРѕС‚РѕСЂРѕР№ РЅР°С‡РЅС‘С‚СЃСЏ РѕС‚СЂРёСЃРѕРєР° РєРЅРѕРїРѕРє (MoveWindowXCurrent)
+	short mwyc = mwyn + 1; //РєРѕРѕСЂРґРёРЅР°С‚Р° y, СЃ РєРѕС‚РѕСЂРѕР№ РЅР°С‡РЅС‘С‚СЃСЏ РѕС‚СЂРёСЃРѕРІРєР° РєРЅРѕРїРѕРє (MoveWindowYCurrent) 
 	for (int m = 0; m < mstr / 2 + 1; m++) {
 		for (int i = 0; i < mchr / 2 - 1; i++) {
 			SetConsoleTextAttribute(hStdOut, (WORD)(background << 5));
@@ -118,19 +118,19 @@ void Global::Window(int mstr, int mchr, char mass[20][14], int background) {
 					cout << "*";
 				}
 			}
-			else if (prs == 13) { //Нажатие на кнопку Enter
-				if (ret == 0) { //Новая игра
+			else if (prs == 13) { //РќР°Р¶Р°С‚РёРµ РЅР° РєРЅРѕРїРєСѓ Enter
+				if (ret == 0) { //РќРѕРІР°СЏ РёРіСЂР°
 					mtrue = true;
 					mn = 1;
 					//cout << "haha, lol";
 				}
-				else if (ret == 1) { //Опции
-					//cout << "hehmda";		 /*Опции. Пока в разработке*/
+				else if (ret == 1) { //РћРїС†РёРё
+					//cout << "hehmda";		 /*РћРїС†РёРё. РџРѕРєР° РІ СЂР°Р·СЂР°Р±РѕС‚РєРµ*/
 				}
-				else if (ret == 2) { //Об игре
-					//cout << "nope";				 /*Об игре. Пока в разработке*/
+				else if (ret == 2) { //РћР± РёРіСЂРµ
+					//cout << "nope";				 /*РћР± РёРіСЂРµ. РџРѕРєР° РІ СЂР°Р·СЂР°Р±РѕС‚РєРµ*/
 				}
-				else if (ret == 3) { //Выход из игры
+				else if (ret == 3) { //Р’С‹С…РѕРґ РёР· РёРіСЂС‹
 					//cout << "hehehe";
 					mn = 1;
 				}

@@ -1,15 +1,15 @@
-#pragma once
+п»ї#pragma once
 #include "Unit.h"
 
-#define std_start_hp 100 //тестовый параметр здоровья
-#define std_start_dmg 1 //тестовый параметр урона
+#define std_start_hp 100 //С‚РµСЃС‚РѕРІС‹Р№ РїР°СЂР°РјРµС‚СЂ Р·РґРѕСЂРѕРІСЊСЏ
+#define std_start_dmg 1 //С‚РµСЃС‚РѕРІС‹Р№ РїР°СЂР°РјРµС‚СЂ СѓСЂРѕРЅР°
 
 class Hero :
 	public Unit
 {
 public:
 	Hero();
-	Hero(int Cor_X, int Cor_Y); //Создание героя с заданными координатами
+	Hero(int Cor_X, int Cor_Y); //РЎРѕР·РґР°РЅРёРµ РіРµСЂРѕСЏ СЃ Р·Р°РґР°РЅРЅС‹РјРё РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё
 	~Hero();
 };
 
