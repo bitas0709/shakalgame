@@ -49,7 +49,7 @@ void Unit::Attack()
 void Unit::Get_Damage(int damage)
 {
 	hp -= damage;
-	if (hp < 0) Die();
+	if (hp <= 0) Die();
 }
 
 void Unit::Die()
